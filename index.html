@@ -576,28 +576,28 @@
     <!-- Featured Project -->
     <section id="project">
         <div class="section-label">Featured Work</div>
-        <h2>Real-Time LFP Battery SoC Estimation</h2>
+        <h2>In Production LFP Battery SoC Estimation Solely Based on Operational Data</h2>
         
         <div class="featured-project reveal">
             <div class="project-header">
                 <div class="project-title">
                     <h3>Production System Built from Scratch</h3>
-                    <p class="project-subtitle">The first real-time State of Charge estimation pipeline for LFP batteries using pure operational field data—no lab testing required.</p>
+                    <p class="project-subtitle">The first online State of Charge estimation pipeline for LFP batteries using pure operational field data. No lab testing required.</p>
                 </div>
             </div>
 
             <div class="project-stats">
                 <div class="stat">
                     <div class="stat-value">67</div>
-                    <div class="stat-label">Battery Devices</div>
+                    <div class="stat-label">Energy Storage Units and Cells</div>
                 </div>
                 <div class="stat">
                     <div class="stat-value">44</div>
-                    <div class="stat-label">Years of Data</div>
+                    <div class="stat-label">Years of Cumulative Data</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-value">7.5mV</div>
-                    <div class="stat-label">Median RMSE</div>
+                    <div class="stat-value">7.5 mV</div>
+                    <div class="stat-label">Median Voltage Simulation RMSE</div>
                 </div>
                 <div class="stat">
                     <div class="stat-value">24/7</div>
@@ -607,20 +607,20 @@
 
             <div class="problem-statement">
                 <h4>The Challenge</h4>
-                <p>LFP (Lithium Iron Phosphate) batteries have an extremely flat voltage curve—the voltage barely changes across most of the charge range. This makes State of Charge estimation incredibly difficult. Traditional methods require weeks of expensive lab testing. I solved this using only noisy, real-world operational data.</p>
+                <p>LFP (Lithium Iron Phosphate) batteries have an extremely flat voltage curve. The voltage barely changes across most of the charge range, making State of Charge (SoC) estimation incredibly difficult. Traditional methods require months of expensive lab testing. I solved this using only noisy, real-world operational data.</p>
             </div>
 
             <div class="approach-grid">
                 <div class="approach-card">
                     <h5>Multi-Parameter Identifiability</h5>
-                    <p>Solved the fundamental challenge of parameter identification in systems with flat observability through constrained optimization using physical laws.</p>
+                    <p>Solved the fundamental challenge of parameter identification in systems with flat observability and circular interdependencies through an iterative approach and physical laws.</p>
                 </div>
                 <div class="approach-card">
-                    <h5>Extended Kalman Filter + ECM</h5>
-                    <p>Implemented sensor fusion combining current integration and voltage measurements through an Equivalent Circuit Model.</p>
+                    <h5>Extended Kalman Filter (EKF) + Equivalent Circuit Model (ECM)</h5>
+                    <p>Implemented sensor fusion combining current integration and voltage measurements through an EKF and ECM voltage simulation.</p>
                     <ul>
-                        <li>Prediction via process model</li>
-                        <li>Update via measurement model</li>
+                        <li>Prediction via process model (Coulomb counting)</li>
+                        <li>Update via measurement model + ECM</li>
                         <li>Correction based on uncertainty</li>
                     </ul>
                 </div>
@@ -629,17 +629,17 @@
                     <p>Developed a novel methodology for creating battery models from chaotic operational data:</p>
                     <ul>
                         <li>Time-dependent parameter fitting</li>
-                        <li>Resistance dependency modeling</li>
-                        <li>SoC curve extraction from residuals</li>
+                        <li>Resistance temperature and current dependency modeling</li>
+                        <li>SoC dependency extraction from residuals</li>
                     </ul>
                 </div>
                 <div class="approach-card">
                     <h5>Zero Lab Testing Required</h5>
-                    <p>Unlike traditional approaches requiring weeks in climate chambers, this system learns from real-world conditions—making it truly fit for application.</p>
+                    <p>Unlike traditional approaches requiring months in climate chambers, this system learns from real-world conditions. The developed model outperforms literature examples by being truly fit for the application.</p>
                 </div>
             </div>
 
-            <h4 style="font-size: 1.8rem; margin-bottom: 1.5rem; margin-top: 2rem;">Watch the Technical Deep Dive</h4>
+            <h4 style="font-size: 1.8rem; margin-bottom: 1.5rem; margin-top: 2rem;">Watch My Presentation on the Topic</h4>
             <div class="video-container">
                 <iframe 
                     src="https://www.youtube.com/embed/GaBrvgLTMI4" 
@@ -667,11 +667,34 @@
                 </ul>
             </div>
         </div>
+
+    <div class="featured-project reveal" style="padding: 3rem 4rem;">
+        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Energy Forecaster</h3>
+        <p class="project-subtitle" style="margin-bottom: 2rem;">Production forecasting platform combining solar physics with ML-based time series prediction</p>
+        
+        <div class="approach-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 0;">
+            <div class="stat">
+                <div class="stat-value">100+</div>
+                <div class="stat-label">Industrial Clients</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">24/7</div>
+                <div class="stat-label">Production Uptime</div>
+            </div>
+        </div>
+        
+        <p style="color: var(--text-secondary); margin-top: 2rem; font-style: italic;">
+            Developed company's first energy consumption and solar production forecasting system integrating physics-based solar models with machine learning time series methods. System serves real-time predictions to industrial customers and serves as a basis for local battery operations. (Technical details under NDA)
+        </p>
+    </div>
+        
     </section>
+
+    
 
     <!-- Thesis Section -->
     <section id="thesis">
-        <div class="section-label">Master's Research</div>
+        <div class="section-label">Master's Thesis Research</div>
         <h2>Academic Contribution</h2>
         
         <div class="thesis-section reveal">
@@ -679,9 +702,9 @@
                 <div class="thesis-content">
                     <div class="thesis-meta">Aalto University School of Science • Engineering Physics</div>
                     <h3>SoC and SoH Estimation of LFP Cells Using Operational Data</h3>
-                    <p>My thesis developed a complete framework for battery state estimation without laboratory testing—a novel approach that makes battery management systems more practical and cost-effective.</p>
-                    <p>The work includes both State of Charge (SoC) and State of Health (SoH) estimation, built as a production system serving real industrial battery installations.</p>
-                    <a href="thesis-presentation.pdf" class="btn" target="_blank">View Presentation</a>
+                    <p>My thesis developed a complete novel framework for battery state estimation without laboratory testing.</p>
+                    <p>The work includes both State of Charge (SoC) and State of Health (SoH) estimation, built into production and serving customers.</p>
+                    <a href="thesis-presentation.pdf" class="btn" target="_blank">View Presentation Slides</a>
                 </div>
                 <div>
                     <div style="background: var(--tesla-gray); padding: 2rem; border-radius: 1rem; border: 1px solid var(--tesla-light-gray);">
@@ -720,19 +743,19 @@
                 <p><strong>M.Sc. Engineering Physics</strong><br>
                 Aalto University, Finland<br>
                 GPA: 4.9/5.0<br>
-                Graduating: October 2025</p>
+                Graduating: December 31st 2025</p>
             </div>
             <div class="background-card">
                 <h4>Current Role</h4>
                 <p><strong>Data Scientist</strong><br>
                 Battery Energy Storage Company<br>
-                Sole data scientist building production ML systems for 300+ battery packs</p>
+                Company's first data scientist building production ML systems for 300+ battery packs</p>
             </div>
             <div class="background-card">
                 <h4>Tesla Connection</h4>
                 <p><strong>Long-term Believer</strong><br>
                 TSLA investor since 2019 (60% of net worth)<br>
-                Model Y owner (purchased 2024)<br>
+                Model Y owner<br>
                 Career driven by Tesla's mission</p>
             </div>
             <div class="background-card">
@@ -752,10 +775,10 @@
 
         <div style="margin-top: 2rem; text-align: center;">
             <p style="font-size: 1.3rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8;">
-                I've been obsessed with Tesla since childhood. I chose battery technology as my career because of this company. I'm not looking for just any job—I'm asking to work on what I've been passionate about for a decade.
+                I've been obsessed with Tesla since childhood. I chose battery technology as my career because of this company. I'm not looking for just any job. I'm asking to work on what I've been passionate about for a decade.
             </p>
             <p style="font-family: 'IBM Plex Mono', monospace; color: var(--battery-green); font-size: 0.9rem;">
-                Open to roles in Palo Alto • Preference for Berlin • Ready to relocate
+                Open to roles in the USA • Preference for within Europe • Ready to relocate from Finland
             </p>
         </div>
     </section>
